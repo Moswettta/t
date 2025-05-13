@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple E-commerce</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="#" class="brand">E-Shop</a>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">Cart</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Search Bar Section -->
+  <div class="search-container">
+    <input type="text" id="search-input" class="search-input" placeholder="Search products..." onkeyup="searchProducts()">
+    <button class="search-btn">Search</button>
+  </div>
+
+  <!-- Product Listings -->
+  <section class="product-section">
+    <h2>Shop Our Products</h2>
+    <div class="product-grid" id="product-grid">
+      <!-- Product 1 -->
+      <div class="product-card" data-name="Product 1" data-description="This is product 1." data-price="19.99">
+        <img src="https://via.placeholder.com/200" alt="Product 1">
+        <div class="product-info">
+          <h3>Product 1</h3>
+          <p>$19.99</p>
+          <p class="product-description">This is product 1.</p>
+          <button class="add-to-cart" onclick="addToCart('Product 1', 19.99)">Add to Cart</button>
+          <button class="purchase-btn">Purchase</button>
+        </div>
+      </div>
+      <!-- More products can be added similarly -->
+    </div>
+  </section>
+
+  <!-- Cart Section -->
+  <div class="cart-section">
+    <h3>Your Cart</h3>
+    <ul id="cart-items"></ul>
+    <button id="send-cart-btn" onclick="sendCartDetails()">Send Cart Details</button>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 E-Shop, All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Cart array to store items
+    let cart = [];
+
+    // Function to add items to the cart
+    function addToCart(productName, productPrice) {
+      cart.push({ name: productName, price: productPrice });
+      updateCartUI();
+    }
+
+    // Function to update the cart UI
+    function updateCartUI() {
+      const cartItemsList = document.getElementById('cart-items');
+      cartItemsList.innerHTML = ''; // Clear current cart
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - $${item.price}`;
+        cartItemsList.appendChild(li);
+      });
+    }
+
+    // Function to send cart details to a phone number
+    function sendCartDetails() {
+      // Convert cart items to a readable string
+      const cartDetails = cart.map(item => `${item.name}: $${item.price}`).join('\n');
+      
+      // Make an AJAX request to send the cart details to the backend
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', 'send_cart.php', true);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      xhr.onload = function() {
+        if (xhr.status == 200) {
+          alert('Cart details sent successfully!');
+        } else {
+          alert('Failed to send cart details');
+        }
+      };
+      xhr.send(`cartDetails=${encodeURIComponent(cartDetails)}`);
+    }
+
+    // Search functionality (optional)
+    function searchProducts() {
+      const input = document.getElementById("search-input").value.toLowerCase();
+      const products = document.getElementsByClassName("product-card");
+      for (let i = 0; i < products.length; i++) {
+        const productName = products[i].getAttribute("data-name").toLowerCase();
+        if (productName.includes(input)) {
+          products[i].style.display = "block";
+        } else {
+          products[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+</body>
+</html>
