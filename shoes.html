@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shoes - eCom</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      background-color: red;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .main {
+      padding: 20px;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .product-card {
+      background: #fff;
+      box-shadow: 0 0 10px #ccc;
+      width: 200px;
+      padding: 10px;
+      text-align: center;
+    }
+    .product-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .footer {
+      background: red;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">eCom</div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search shoes..." />
+    </div>
+  </div>
+
+  <div class="main">
+    <h2>Shoes Collection</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x150" alt="Sneakers" />
+        <p>Running Sneakers</p>
+        <p>Ksh 2,000</p>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x150" alt="Loafers" />
+        <p>Casual Loafers</p>
+        <p>Ksh 1,800</p>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x150" alt="Heels" />
+        <p>Elegant Heels</p>
+        <p>Ksh 2,500</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 eCom. All rights reserved.
+  </div>
+</body>
+</html>
