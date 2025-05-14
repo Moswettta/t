@@ -1,176 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>eCom | Home</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>eCom - Online Shopping</title>
   <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
     }
-    header {
-      background-color: #d3222a;
+    .header {
+      background-color: red;
       color: white;
       padding: 10px 20px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
     }
     .logo {
       font-size: 24px;
       font-weight: bold;
     }
-    .search-box input {
-      padding: 8px;
+    .search-bar input {
+      padding: 5px;
       width: 300px;
-      border: none;
-      border-radius: 5px;
-    }
-    .user-options {
-      display: flex;
-      gap: 15px;
-    }
-    nav {
-      background: #fff;
-      display: flex;
-      padding: 10px;
-      overflow-x: auto;
-      border-bottom: 1px solid #ddd;
-    }
-    nav a {
-      margin-right: 15px;
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-    .main {
-      display: flex;
     }
     .sidebar {
       width: 200px;
-      background: #fff;
+      background-color: #f1f1f1;
+      padding-top: 20px;
+      position: fixed;
+      height: 100%;
+    }
+    .sidebar a {
+      display: block;
       padding: 10px;
-      border-right: 1px solid #ddd;
+      color: black;
+      text-decoration: none;
     }
-    .sidebar h3 {
-      margin-bottom: 10px;
-      color: #d3222a;
+    .sidebar a:hover {
+      background-color: #ddd;
     }
-    .sidebar ul {
-      list-style: none;
-    }
-    .sidebar li {
-      margin-bottom: 8px;
-      cursor: pointer;
-    }
-    .hero {
-      flex: 1;
-      background: url('https://via.placeholder.com/1000x350/FF7F50/FFFFFF?text=Top+Rated+Picks') center/cover no-repeat;
-      height: 350px;
-    }
-    .categories, .products {
+    .main {
+      margin-left: 220px;
       padding: 20px;
+    }
+    .banner {
+      width: 100%;
+      background: orange;
+      color: white;
+      text-align: center;
+      padding: 40px;
+      margin-bottom: 20px;
+    }
+    .products {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
-      justify-content: center;
     }
-    .card {
-      background: white;
-      padding: 10px;
+    .product-card {
+      background: #fff;
+      box-shadow: 0 0 10px #ccc;
       width: 200px;
-      border-radius: 5px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 10px;
       text-align: center;
     }
-    .card img {
+    .product-card img {
       width: 100%;
       height: 150px;
       object-fit: cover;
     }
-    .card h4 {
-      font-size: 16px;
-      margin: 10px 0 5px;
-    }
-    .card p {
-      color: #d3222a;
-      font-weight: bold;
-    }
-    footer {
-      background: #222;
+    .footer {
+      background: red;
       color: white;
       text-align: center;
-      padding: 15px;
+      padding: 10px;
       margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <header>
+  <div class="header">
     <div class="logo">eCom</div>
-    <div class="search-box">
-      <input type="text" placeholder="I'm looking for...">
+    <div class="search-bar">
+      <input type="text" placeholder="I'm looking for..." />
     </div>
-    <div class="user-options">
-      <a href="#" style="color:white">Cart</a>
-      <a href="#" style="color:white">Benjamin Masoa</a>
+    <div class="user-links">
+      <a href="#" style="color: white; text-decoration: none;">Cart</a>
     </div>
-  </header>
+  </div>
 
-  <nav>
-    <a href="#">Smart TV</a>
-    <a href="#">Anniversary Sale</a>
-    <a href="#">Phones</a>
-    <a href="#">Fashion</a>
-    <a href="#">Fridges</a>
-  </nav>
+  <div class="sidebar">
+    <a href="shoes.html">Shoes</a>
+    <a href="skirts.html">Skirts</a>
+    <a href="trousers.html">Trousers</a>
+  </div>
 
   <div class="main">
-    <div class="sidebar">
-      <h3>Category</h3>
-      <ul>
-        <li>TV/Audio/Video</li>
-        <li>Phones & Accessories</li>
-        <li>Health & Beauty</li>
-        <li>Home & Living</li>
-        <li>Appliances</li>
-        <li>Computers</li>
-        <li>Fashion</li>
-      </ul>
+    <div class="banner">
+      <h2>Top Rated Picks</h2>
+      <p>More than 90% of Customers Favorites</p>
     </div>
-    <div class="hero"></div>
-  </div>
 
-  <h2 style="padding: 20px;">Flash Sale</h2>
-  <div class="products">
-    <div class="card">
-      <img src="https://via.placeholder.com/200x150" alt="">
-      <h4>Wireless Earbuds</h4>
-      <p>Ksh 1,999</p>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x150" alt="">
-      <h4>Smart TV 32"</h4>
-      <p>Ksh 12,499</p>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x150" alt="">
-      <h4>Gas Cooker</h4>
-      <p>Ksh 4,999</p>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x150" alt="">
-      <h4>Necklace & Earrings</h4>
-      <p>Ksh 699</p>
+    <h3>Flash Sale</h3>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x150" alt="Product" />
+        <p>Classic Sneakers</p>
+        <p>Ksh 2,000</p>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x150" alt="Product" />
+        <p>Summer Skirt</p>
+        <p>Ksh 1,200</p>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x150" alt="Product" />
+        <p>Denim Trousers</p>
+        <p>Ksh 2,500</p>
+      </div>
     </div>
   </div>
 
-  <footer>
-    <p>© 2025 eCom. All rights reserved.</p>
-  </footer>
+  <div class="footer">
+    &copy; 2025 eCom. All rights reserved.
+  </div>
 </body>
 </html>
