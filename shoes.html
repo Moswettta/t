@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shoes - eCom</title>
+  <title>Skirts - eCom</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
     }
     .header {
       background-color: red;
@@ -33,14 +32,18 @@
     .product-card {
       background: #fff;
       box-shadow: 0 0 10px #ccc;
-      width: 200px;
+      width: 250px;
       padding: 10px;
-      text-align: center;
     }
     .product-card img {
       width: 100%;
       height: 150px;
       object-fit: cover;
+    }
+    .product-card select, .product-card button {
+      width: 100%;
+      padding: 5px;
+      margin-top: 5px;
     }
     .footer {
       background: red;
@@ -54,28 +57,72 @@
 <body>
   <div class="header">
     <div class="logo">eCom</div>
-    <div class="search-bar">
-      <input type="text" placeholder="Search shoes..." />
+    <div class="user-links">
+      <a href="#" style="color: white; text-decoration: none;">Cart</a>
     </div>
   </div>
 
   <div class="main">
-    <h2>Shoes Collection</h2>
+    <h2>Skirts Collection</h2>
     <div class="products">
       <div class="product-card">
-        <img src="https://via.placeholder.com/200x150" alt="Sneakers" />
-        <p>Running Sneakers</p>
-        <p>Ksh 2,000</p>
+        <img src="https://via.placeholder.com/250x150" alt="Product" />
+        <p><strong>Floral Summer Skirt</strong></p>
+        <p>Lightweight and breezy. Perfect for warm weather.</p>
+        <p>Price: Ksh 1,200</p>
+        <label for="size1">Size:</label>
+        <select id="size1">
+          <option>Small</option>
+          <option>Medium</option>
+          <option>Large</option>
+        </select>
+        <label for="color1">Color:</label>
+        <select id="color1">
+          <option>Red</option>
+          <option>Blue</option>
+          <option>Yellow</option>
+        </select>
+        <button>Add to Cart</button>
       </div>
+
       <div class="product-card">
-        <img src="https://via.placeholder.com/200x150" alt="Loafers" />
-        <p>Casual Loafers</p>
-        <p>Ksh 1,800</p>
+        <img src="https://via.placeholder.com/250x150" alt="Product" />
+        <p><strong>Pleated Office Skirt</strong></p>
+        <p>Perfect for formal and professional settings.</p>
+        <p>Price: Ksh 1,800</p>
+        <label for="size2">Size:</label>
+        <select id="size2">
+          <option>Small</option>
+          <option>Medium</option>
+          <option>Large</option>
+        </select>
+        <label for="color2">Color:</label>
+        <select id="color2">
+          <option>Black</option>
+          <option>Gray</option>
+          <option>White</option>
+        </select>
+        <button>Add to Cart</button>
       </div>
+
       <div class="product-card">
-        <img src="https://via.placeholder.com/200x150" alt="Heels" />
-        <p>Elegant Heels</p>
-        <p>Ksh 2,500</p>
+        <img src="https://via.placeholder.com/250x150" alt="Product" />
+        <p><strong>Denim Casual Skirt</strong></p>
+        <p>Durable and stylish for everyday wear.</p>
+        <p>Price: Ksh 1,500</p>
+        <label for="size3">Size:</label>
+        <select id="size3">
+          <option>Small</option>
+          <option>Medium</option>
+          <option>Large</option>
+        </select>
+        <label for="color3">Color:</label>
+        <select id="color3">
+          <option>Blue</option>
+          <option>Dark Blue</option>
+          <option>Black</option>
+        </select>
+        <button>Add to Cart</button>
       </div>
     </div>
   </div>
